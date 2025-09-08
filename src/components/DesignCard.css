@@ -1,0 +1,260 @@
+.design-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.design-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.design-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.design-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.design-card:hover .design-image {
+  transform: scale(1.05);
+}
+
+.design-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.design-image-container:hover .design-overlay {
+  opacity: 1;
+}
+
+.zoom-btn,
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.zoom-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.zoom-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.delete-btn {
+  background: rgba(220, 53, 69, 0.9);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc3545;
+  transform: scale(1.1);
+}
+
+.design-content {
+  padding: 1.5rem;
+}
+
+.design-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.design-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  word-break: break-word;
+}
+
+.upload-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.roast-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.roast-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.roast-text {
+  color: #495057;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Preview Modal Styles */
+.preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  animation: scaleIn 0.3s ease;
+}
+
+.preview-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+}
+
+.preview-close:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preview-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.preview-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.preview-info p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .design-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  .design-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .upload-date {
+    margin-left: 0;
+  }
+  
+  .preview-close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .preview-info {
+    padding: 1rem;
+  }
+  
+  .zoom-btn,
+  .delete-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
