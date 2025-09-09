@@ -97,7 +97,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Made with 💜 and a pinch of sass for designers</p>
+        <p>made with 💜 and a pinch of sass for designers by Nisha Rastogi</p>
       </footer>
     </div>
   );
