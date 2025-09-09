@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1 className="app-title">Get Roasted</h1>
+        <h1 className="app-title">Roast your design!</h1>
         <p className="app-subtitle">
           Upload your designs and get hilariously honest (but constructive) feedback. We roast because we care!
         </p>
@@ -97,7 +97,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Made with love (and a bit of sass) for the UX team</p>
+        <p>Made with 💜 and a pinch of sass for designers</p>
       </footer>
     </div>
   );
